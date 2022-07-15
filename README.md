@@ -1,5 +1,4 @@
-# soccer-news-app
-
+# Soccer News App
 
 ## Sobre
 Criar um App Android Nativo usando a linguagem de programação Java, explorando os componentes nativos mais atuais oferecidos pelo Android Jetpack e utilizar um repositório simulando uma API REST para as imagem e link das reportagens.
