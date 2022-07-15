@@ -1,7 +1,7 @@
 package com.example.soccernews.ui.news;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.soccernews.MainActivity;
+import com.example.soccernews.data.local.AppDataBase;
 import com.example.soccernews.databinding.FragmentNewsBinding;
 import com.example.soccernews.ui.adapter.NewsAdapter;
 
@@ -27,9 +29,26 @@ public class NewsFragment extends Fragment {
 
         binding.rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
         newsViewModel.getNews().observe(getViewLifecycleOwner(), news -> {
-            binding.rvNews.setAdapter(new NewsAdapter(news, view ->{
-                Log.d("MINHA_TAG", "Clicou!!!");
+            binding.rvNews.setAdapter(new NewsAdapter(news, updateNews -> {
+                MainActivity activity = (MainActivity)  getActivity();
+                if (activity != null){
+                    activity.getDb().newsDao().save(updateNews);
+                }
             }));
+        });
+
+        newsViewModel.getState().observe(getViewLifecycleOwner(), state -> {
+            switch (state){
+                case DOING:
+                    //TODO: Incluir SwipeRefreshLayout (loading)
+                    break;
+                case DONE:
+                    //TODO: Incluir SwipeRefreshLayout (loading)
+                    break;
+                case ERROR:
+                    //TODO: Incluir SwipeRefreshLayout (loading)
+                    //TODO: Mostrar erro genérico
+            }
         });
         return root;
     }
