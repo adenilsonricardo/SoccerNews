@@ -33,7 +33,7 @@ Parte 4:
 
 ## Projeto
 
-### Simulador de partidas com resultados aleatórios, com uma tela de detalhes adicional onde esta sendo o jogo e nível de força dos times.
+### App com notícias sobre o futebol feminimo, com botões para acesso a matéria completa, favoritar e compartilhar, e com uma segunda tela para mostrar as noticias favoritadas.
 - Tela inicial - News:
   - Imagem;
   - Titulo da Noticia;
@@ -50,4 +50,4 @@ Parte 4:
   - Botão favoritar;
   - Botão Share
   
-- Visto e aplicados os conceitos sobre o pacote Android Jetpack, Material Design, Layouts de app, Modelagem de API, Bibliotecas Retrofit e Glide vistas ao longo do curso.
+- Visto e aplicados os conceitos sobre o pacote Android Jetpack, Material Design, Layouts de app, Modelagem de API, Bibliotecas Retrofit e Glide e BottomNavigation vistas ao longo do curso.
