@@ -70,11 +70,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         });
         int favoriteColor = news.favorite? R.color.favorite_active : R.color.favorite_inactive;
         holder.binding.ivFavorite.setColorFilter(context.getResources().getColor(favoriteColor));
-        /*if (news.favorite){
-            holder.binding.ivFavorite.setColorFilter(context.getResources().getColor(R.color.favorite_active));
-        } else {
-            holder.binding.ivFavorite.setColorFilter(context.getResources().getColor(R.color.favorite_inactive));
-        }*/
     }
 
     @Override
